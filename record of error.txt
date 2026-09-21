@@ -1,0 +1,44 @@
+PS C:\Users\UC\Desktop\elementsofcomputingsystems> & C:\Users\UC\AppData\Local\Programs\Python\Python310\python.exe c:/Users/UC/Desktop/elementsofcomputingsystems/loop.py
+Traceback (most recent call last):
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\loop.py", line 1, in <module>
+    from components import CPU,rom,ram
+ImportError: cannot import name 'CPU' from 'components' (c:\Users\UC\Desktop\elementsofcomputingsystems\components.py)
+PS C:\Users\UC\Desktop\elementsofcomputingsystems> & C:\Users\UC\AppData\Local\Programs\Python\Python310\python.exe c:/Users/UC/Desktop/elementsofcomputingsystems/loop.py
+Traceback (most recent call last):
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\loop.py", line 1, in <module>
+    from components import cpu,rom,ram
+ImportError: cannot import name 'ram' from 'components' (c:\Users\UC\Desktop\elementsofcomputingsystems\components.py)
+PS C:\Users\UC\Desktop\elementsofcomputingsystems> & C:\Users\UC\AppData\Local\Programs\Python\Python310\python.exe c:/Users/UC/Desktop/elementsofcomputingsystems/loop.py
+Traceback (most recent call last):
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\loop.py", line 15, in <module>
+    writeM,addressM,outM,pcout = cpu.tick(inst,fromramM,reset)
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\components.py", line 210, in tick
+    self.A.store(instruction[1:16],1)
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\components.py", line 67, in store
+    self.bits[i].store(listof16bit[i], load)
+IndexError: list index out of range
+PS C:\Users\UC\Desktop\elementsofcomputingsystems> & C:\Users\UC\AppData\Local\Programs\Python\Python310\python.exe c:/Users/UC/Desktop/elementsofcomputingsystems/loop.py
+Traceback (most recent call last):
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\loop.py", line 18, in <module>
+    ram.tick()
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\rampart.py", line 106, in tick
+    self.screen.tick()
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\rampart.py", line 35, in tick
+    self.screen = np.array([[self.ram.value(int_to_binary_list_fixed(32*i + a)) for a in range(32)] for i in range(16)])
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\rampart.py", line 35, in <listcomp>
+    self.screen = np.array([[self.ram.value(int_to_binary_list_fixed(32*i + a)) for a in range(32)] for i in range(16)])
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\rampart.py", line 35, in <listcomp>
+    self.screen = np.array([[self.ram.value(int_to_binary_list_fixed(32*i + a)) for a in range(32)] for i in range(16)])
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\components.py", line 175, in value
+    return self.listofram[mux8way16(0,1,2,3,4,5,6,7,address[:3])].value(address[3:])
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\components.py", line 156, in value
+    return self.listofram[mux8way16(0,1,2,3,4,5,6,7,address[:3])].value(address[3:])
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\components.py", line 137, in value
+    return self.listofram[mux8way16(0,1,2,3,4,5,6,7,address[:3])].value(address[3:])
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\components.py", line 118, in value
+    return self.listofram[mux8way16(0,1,2,3,4,5,6,7,address[:3])].value(address[3:])
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\components.py", line 102, in value
+    return self.listofram[mux8way16(0,1,2,3,4,5,6,7,adress)].value()
+  File "c:\Users\UC\Desktop\elementsofcomputingsystems\logicgates.py", line 128, in mux8way16
+    if bit3sel[2]==0:
+IndexError: list index out of range
